@@ -1,5 +1,3 @@
-#![feature(collections_bound)]
-
 extern crate avl_tree;
 extern crate rand;
 
@@ -68,7 +66,7 @@ fn test_delete(){
 }
 
 #[test]
-fn test_perfomance(){
+fn test_performance(){
     let mut t = avl_tree::AVLTree::<u64,i32>::new();
     let data = 1337;
     let start = Instant::now();
@@ -91,7 +89,8 @@ fn test_perfomance(){
         t.delete(20000);
     }
     let diff_full = start_2.elapsed();
-    assert!(diff_full < diff_simple * 13); //log time 
+    eprintln!("Performance ratio: full / simple = {}", diff_full.as_secs_f64() / diff_simple.as_secs_f64());
+    assert!(diff_full < diff_simple * 13); //log time
 }
 
 #[test]

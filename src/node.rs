@@ -249,7 +249,7 @@ pub fn delete<K:Ord,D>(key: K, mut root: Box<Node<K,D>>) -> Option<Box<Node<K,D>
 fn simple_tree(size: i32) -> Box<Node<u64,i32>> {
     let mut t = Box::new(Node::<u64,i32>{key: 1, data: 1337, height: 0, left:None, right: None});
     for x in 2..size+1 {
-        t = insert((x as u64),1337+x-1,t)
+        t = insert(x as u64,1337+x-1,t)
     }
     t
 }

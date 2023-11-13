@@ -1,8 +1,6 @@
-extern crate rand;
-extern crate test;
 
 use node::Node;
-use node::{insert,delete,search,min,max,is_avl_tree, to_string, min_pair, max_pair};
+use node::{insert, delete, search, is_avl_tree, min_pair, max_pair};
 use iterators::RangePairIter;
 use std::collections::Bound;
 
